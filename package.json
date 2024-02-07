@@ -1,0 +1,63 @@
+{
+  "name": "preprocessing",
+  "version": "1.0.0",
+  "description": "Preprocess your image into a jpg or png format",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "package:windows": "electron-packager ./ preprocessing --platform win32 --arch x64 --out dist --overwrite",
+    "setup:windows": "electron-installer-windows --src dist2/preprocessing-win32-x64/ --dest dist2/installers/ --config config.json"
+  },
+  "homepage": "https://kuzitech.com",
+  "keywords": ["Utility"],
+  "author": {
+    "name": "Kuzitech Solutions",
+    "email": "kuzitech@gmail.com",
+    "url": "https://kuzitech.com/"
+  },
+  "icon": "./icons/logoyct.png",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.65",
+    "@electron-forge/maker-deb": "^6.0.0-beta.65",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.65",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.65",
+    "@electron-forge/maker-zip": "^6.0.0-beta.65",
+    "electron": "^19.0.9",
+    "electron-installer-windows": "^3.0.0",
+    "electron-packager": "^15.5.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "preprocessing"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "dest": "dist/installers/",
+    "icon": "resources/Icon.ico",
+    "src": "dist/preprocessing-win32-x64",
+    "tags": [
+      "Utility"
+    ]
+  }
